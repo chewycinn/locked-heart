@@ -92,7 +92,7 @@ button:hover {
 
 /* === Scrollbar Styling for the Letter === */
 .letter::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 .letter::-webkit-scrollbar-thumb {
@@ -109,6 +109,8 @@ button:hover {
   justify-content: center;
   gap: 15px;
   margin-top: 30px;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
 
 .photo-gallery img {
@@ -130,7 +132,6 @@ button:hover {
 .hidden {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 1s ease;
 }
 
 .show {
@@ -138,35 +139,26 @@ button:hover {
   pointer-events: auto;
 }
 
-#petals-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.petal, .butterfly {
+  position: absolute;
   pointer-events: none;
-  overflow: hidden;
-  z-index: 998; /* Just behind letter overlay */
 }
 
 .petal {
-  position: absolute;
   width: 20px;
   height: 20px;
-  background-image: url('https://i.ibb.co/z4C5Wmf/butterfly.png');
+  background-image: url('https://i.ibb.co/WBFKGMZ/petal.png');
   background-size: cover;
   animation: fall linear forwards;
   opacity: 0.8;
 }
 
 .butterfly {
-  position: absolute;
   width: 40px;
   height: 40px;
   background-image: url('https://i.ibb.co/z4C5Wmf/butterfly.png');
   background-size: contain;
   animation: float 10s linear infinite;
-  pointer-events: none;
   opacity: 0.9;
 }
 
@@ -184,7 +176,6 @@ button:hover {
 @keyframes float {
   0% {
     transform: translateY(0) translateX(0) rotate(0deg);
-    opacity: 0.9;
   }
   50% {
     transform: translateY(-20px) translateX(30px) rotate(20deg);
