@@ -36,6 +36,9 @@ function unlockHeart() {
     heart.classList.add("unlocked");
     music.play();
     revealLetter();
+     // 🌸 Start flower petals & 🦋 butterflies
+    setInterval(createPetal, 500);       // every 0.5s
+    setInterval(createButterfly, 4000);  // every 4s
   } else {
     alert("That’s not quite it… try again, love 💌");
   }
