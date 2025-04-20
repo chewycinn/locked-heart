@@ -1,7 +1,7 @@
+const letterOverlay = document.getElementById("letterOverlay"); // Grabbing the letter overlay element
 const correctPassword = "IV-V-MMXXV"; // Roman numeral password
 const music = document.getElementById("bgMusic");
 const heart = document.getElementById("heart");
-const letterOverlay = document.getElementById("letterOverlay");
 const typedText = document.getElementById("typedText");
 
 const loveLetter = `
@@ -38,14 +38,17 @@ function unlockHeart() {
     // Make sure music is ready to play
     music.volume = 0.7;
     music.muted = false;
-
-    music.play().catch((e) => {
-      console.error("Music play failed:", e);
+    music.play().catch((e) => console.error("Music play failed:", e));
     });
 
-    revealLetter();
-  } else {
-    alert("That’s not quite it… try again, love 💌");
-  }
+function revealLetter() {
+  letterOverlay.style.display = "flex";  // Show the letter overlay
+  
+  // Start the typing effect
+  typeWriter(loveLetter, 0);
+  
+  // Start the petals falling
+  petalInterval = setInterval(createPetal, 500);
 }
+
 
