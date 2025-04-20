@@ -47,8 +47,21 @@ function revealLetter() {
 }
 
 function typeWriter(text, i) {
+  const loveLetterElement = document.getElementById("loveLetter");
+
   if (i < text.length) {
-    typedText.innerHTML += text.charAt(i);
-    setTimeout(() => typeWriter(text, i + 1), 40);
+    loveLetterElement.innerHTML += text.charAt(i);
+    loveLetterElement.parentElement.scrollTop = loveLetterElement.parentElement.scrollHeight;
+    setTimeout(() => typeWriter(text, i + 1), 30);
+  } else {
+    // ✅ After typing is complete, show the photo gallery
+    setTimeout(() => {
+      document.querySelector('.photo-gallery').classList.remove('hidden');
+      document.querySelector('.photo-gallery').classList.add('show');
+
+      document.querySelector('.photo-title').classList.remove('hidden');
+      document.querySelector('.photo-title').classList.add('show');
+    }, 500); // Add a little pause after typing ends
   }
 }
+
