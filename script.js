@@ -68,38 +68,20 @@ function typeWriter(text, i) {
 function createPetal() {
   const petal = document.createElement("div");
   petal.classList.add("petal");
-
-  // Random horizontal position
-  petal.style.left = Math.random() * 100 + "vw";
-
-  // Random animation duration and delay
-  petal.style.animationDuration = (Math.random() * 3 + 5) + "s";
-  petal.style.animationDelay = Math.random() * 2 + "s";
-
+  petal.style.left = `${Math.random() * 100}vw`;
+  petal.style.animationDuration = `${Math.random() * 3 + 5}s`;
+  petal.style.animationDelay = `${Math.random() * 2}s`;
   document.getElementById("petals-container").appendChild(petal);
-
-  // Remove the petal when animation ends
-  setTimeout(() => {
-    petal.remove();
-  }, 10000);
+  setTimeout(() => petal.remove(), 10000);
 }
 
 function createButterfly() {
   const butterfly = document.createElement("div");
   butterfly.classList.add("butterfly");
-
-  // Random horizontal starting position
-  butterfly.style.left = Math.random() * 100 + "vw";
-
-  // Random animation delay and duration
-  butterfly.style.animationDuration = (Math.random() * 5 + 6) + "s";
-  butterfly.style.animationDelay = Math.random() * 2 + "s";
-
+  butterfly.style.left = `${Math.random() * 100}vw`;
+  butterfly.style.animationDuration = `${Math.random() * 5 + 6}s`;
+  butterfly.style.animationDelay = `${Math.random() * 2}s`;
   document.getElementById("petals-container").appendChild(butterfly);
-
-  // Remove butterfly after animation
-  setTimeout(() => {
-    butterfly.remove();
-  }, 12000);
+  setTimeout(() => butterfly.remove(), 12000);
 }
 
