@@ -123,3 +123,17 @@ button:hover {
 .photo-gallery img:hover {
   transform: scale(1.1);
 }
+
+/* =====================
+   🔒 HIDE/SHOW ANIMATION
+   ===================== */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
