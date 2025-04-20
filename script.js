@@ -1,11 +1,12 @@
-// Password and heart elements
-const correctPassword = 'IV-V-MMXXV';
+const correctPassword = "IV-V-MMXXV"; // Roman numeral password
+const music = document.getElementById("bgMusic");
 const heart = document.getElementById("heart");
-const music = document.getElementById("music");
+const letterOverlay = document.getElementById("letterOverlay");
+const typedText = document.getElementById("typedText");
 
-// Love letter message
-const loveLetter = `I don’t really know where to begin, because no words could ever match how I feel about you… but I’ll try anyway.
-  
+const loveLetter = `
+I don’t really know where to begin, because no words could ever match how I feel about you… but I’ll try anyway.
+
 How are you, pretty baby? Have I already told you today that I love everything about you?
 
 And when I say everything, I mean everything from your skin to your pure soul. Even the parts of yourself you don’t like... I love those too.
@@ -24,68 +25,30 @@ I want you to always remember where you came from—to look back and reflect on 
 
 And most of all, I want to walk beside you through it all—every step, every season, every chapter.
 
-You’ll never be alone, baby. I’m yours completely. Always.
+You’ll never be alone, baby. I’m yours completely. Always. 
 
-I love you endlessly. 🫶🌙`;
+I love you endlessly. 🫶🌙
+`;
 
-// Function to unlock heart and reveal letter
 function unlockHeart() {
   const input = document.getElementById("passwordInput").value.trim();
   if (input === correctPassword) {
     heart.classList.add("unlocked");
-
-    // Make sure music is ready to play
-    music.volume = 0.7;
-    music.muted = false;
-    music.play().catch((e) => console.error("Music play failed:", e));
-
-    // Reveal the letter
+    music.play();
     revealLetter();
   } else {
-    alert("Incorrect password. Please try again.");
+    alert("That’s not quite it… try again, love 💌");
   }
 }
 
-// Reveal the letter with a typewriter effect
 function revealLetter() {
-  const letterOverlay = document.getElementById("letterOverlay");
-  const loveLetterElement = document.getElementById("loveLetter");
-
-  letterOverlay.style.display = "flex";  // Show the letter overlay
-  loveLetterElement.innerHTML = "";  // Clear any old content
-  typeWriter(loveLetter, 0);  // Start the typing effect
-
-  // Start the falling petals
-  setInterval(createPetal, 500);
+  letterOverlay.style.display = "flex";
+  typeWriter(loveLetter, 0);
 }
 
-// Typewriter effect for the love letter
 function typeWriter(text, i) {
-  const loveLetterElement = document.getElementById("loveLetter");
-
   if (i < text.length) {
-    loveLetterElement.innerHTML += text.charAt(i);  // Add next character
-    i++;
-    setTimeout(() => typeWriter(text, i), 50);  // Adjust speed if needed
+    typedText.innerHTML += text.charAt(i);
+    setTimeout(() => typeWriter(text, i + 1), 40);
   }
-}
-
-// Petal creation (for animation)
-function createPetal() {
-  const petal = document.createElement("div");
-  petal.classList.add("petal");
-
-  // Random horizontal position
-  petal.style.left = Math.random() * 100 + "vw";
-
-  // Random animation duration and delay
-  petal.style.animationDuration = (Math.random() * 3 + 5) + "s";
-  petal.style.animationDelay = Math.random() * 2 + "s";
-
-  document.getElementById("petals-container").appendChild(petal);
-
-  // Remove the petal when animation ends
-  setTimeout(() => {
-    petal.remove();
-  }, 10000);
 }
