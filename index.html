@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Unlock My Heart</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Romantic Website</title>
   <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <img src="https://i.pinimg.com/originals/40/2b/f5/402bf5ee292c4de45755be158115f743.gif" alt="Heart" class="heart" id="heart"/>
-    <input type="password" placeholder="password" id="passwordInput"/>
-    <button onclick="unlockHeart()">Unlock</button>
-  </div>
 
-  <div id="letterOverlay" style="display:none;">
-  <div class="letter">
-    <p id="loveLetter"></p>
-  </div>
-</div>
+  <!-- Heart to unlock -->
+  <div class="heart" id="heart" onclick="unlockHeart()"></div>
 
-  <audio id="bgMusic" src="assets/my-girl.mp3" loop></audio>
-  <script src="script.js"></script>
+  <!-- Password input -->
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button id="unlockButton" onclick="unlockHeart()">Unlock</button>
 
+  <!-- Petals container -->
   <div id="petals-container"></div>
 
+  <!-- Letter overlay (hidden initially) -->
+  <div id="letterOverlay">
+    <div class="letter">
+      <p id="loveLetter"></p>
+    </div>
+  </div>
+
+  <!-- Music -->
+  <audio id="music" preload="auto">
+  <source src="assets/my-girl.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
