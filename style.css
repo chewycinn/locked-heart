@@ -148,7 +148,7 @@ button:hover {
 .petal {
   width: 20px;
   height: 20px;
-  background-image: url('https://i.ibb.co/WBFKGMZ/petal.png');
+  background-image: url('https://i.pinimg.com/736x/f3/f5/e4/f3f5e42794fa6340653607d8f712385b.jpg');
   background-size: cover;
   animation: fall linear forwards;
   opacity: 0.8;
@@ -157,7 +157,7 @@ button:hover {
 .butterfly {
   width: 40px;
   height: 40px;
-  background-image: url('https://i.ibb.co/z4C5Wmf/butterfly.png');
+  background-image: url('https://i.pinimg.com/736x/9f/c4/52/9fc452ceea012b727190472a3c229a99.jpg');
   background-size: contain;
   animation: float 10s linear infinite;
   opacity: 0.9;
