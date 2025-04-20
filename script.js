@@ -51,4 +51,23 @@ function revealLetter() {
   petalInterval = setInterval(createPetal, 500);
 }
 
+  function createPetal() {
+  const petal = document.createElement("div");
+  petal.classList.add("petal");
+
+  // Random horizontal position
+  petal.style.left = Math.random() * 100 + "vw";
+
+  // Random animation duration and delay
+  petal.style.animationDuration = (Math.random() * 3 + 5) + "s";
+  petal.style.animationDelay = Math.random() * 2 + "s";
+
+  document.getElementById("petals-container").appendChild(petal);
+
+  // Remove the petal when animation ends
+  setTimeout(() => {
+    petal.remove();
+  }, 10000);
+}
+
 
