@@ -1,3 +1,4 @@
+/* === General Body Styling === */
 body {
   margin: 0;
   padding: 0;
@@ -10,11 +11,13 @@ body {
   flex-direction: column;
 }
 
+/* === Container for inputs === */
 .container {
   text-align: center;
   padding: 20px;
 }
 
+/* === Heart Image Styling === */
 .heart {
   width: 200px;
   transition: transform 1s ease, filter 1s ease;
@@ -25,6 +28,7 @@ body {
   filter: drop-shadow(0 0 20px pink);
 }
 
+/* === Password Input === */
 input[type="password"] {
   padding: 10px;
   border: 2px solid #d1c4e9;
@@ -32,8 +36,10 @@ input[type="password"] {
   font-size: 16px;
   margin-top: 20px;
   text-align: center;
+  outline: none;
 }
 
+/* === Button Styling === */
 button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -43,8 +49,14 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
+button:hover {
+  background-color: #f06292;
+}
+
+/* === Letter Overlay Styling === */
 .letter-overlay {
   position: fixed;
   top: 0;
@@ -56,8 +68,10 @@ button {
   justify-content: center;
   align-items: center;
   z-index: 999;
+  padding: 20px;
 }
 
+/* === Letter Box Styling === */
 .letter {
   background: url('https://i.pinimg.com/736x/63/63/68/636368ee10bb9d1b18f24d978b6820b1.jpg') no-repeat center center;
   background-size: cover;
@@ -70,4 +84,17 @@ button {
   line-height: 1.8;
   white-space: pre-wrap;
   color: #4a148c;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* === Scrollbar Styling for the Letter === */
+.letter::-webkit-scrollbar {
+  width: 8px;
+}
+
+.letter::-webkit-scrollbar-thumb {
+  background-color: #f8bbd0;
+  border-radius: 10px;
 }
