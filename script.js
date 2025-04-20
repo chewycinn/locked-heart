@@ -34,21 +34,18 @@ function unlockHeart() {
   const input = document.getElementById("passwordInput").value.trim();
   if (input === correctPassword) {
     heart.classList.add("unlocked");
-    music.play();
+
+    // Make sure music is ready to play
+    music.volume = 0.7;
+    music.muted = false;
+
+    music.play().catch((e) => {
+      console.error("Music play failed:", e);
+    });
+
     revealLetter();
   } else {
     alert("That’s not quite it… try again, love 💌");
   }
 }
 
-function revealLetter() {
-  letterOverlay.style.display = "flex";
-  typeWriter(loveLetter, 0);
-}
-
-function typeWriter(text, i) {
-  if (i < text.length) {
-    typedText.innerHTML += text.charAt(i);
-    setTimeout(() => typeWriter(text, i + 1), 40);
-  }
-}
