@@ -69,9 +69,9 @@ button:hover {
   align-items: center;
   z-index: 999;
   padding: 20px;
+  overflow: auto; /* Allow overlay itself to scroll */
 }
 
-/* === Letter Box Styling === */
 .letter {
   background: url('https://i.pinimg.com/736x/63/63/68/636368ee10bb9d1b18f24d978b6820b1.jpg') no-repeat center center;
   background-size: cover;
@@ -84,10 +84,11 @@ button:hover {
   line-height: 1.8;
   white-space: pre-wrap;
   color: #4a148c;
-  max-height: 80vh;
-  overflow-y: auto;
+  max-height: 90vh; /* Adjust for taller letters */
+  overflow-y: auto;  /* Makes the letter scroll */
   position: relative;
 }
+
 
 /* === Scrollbar Styling for the Letter === */
 .letter::-webkit-scrollbar {
