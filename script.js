@@ -4,6 +4,26 @@ const heart = document.getElementById("heart");
 const letterOverlay = document.getElementById("letterOverlay");
 const typedText = document.getElementById("typedText");
 
+function unlockHeart() {
+  const input = document.getElementById("passwordInput").value.trim();
+  if (input === correctPassword) {
+    heart.classList.add("unlocked");
+    music.play();
+    revealLetter();
+     // 🌸 Start flower petals & 🦋 butterflies
+    setInterval(createPetal, 500);       // every 0.5s
+    setInterval(createButterfly, 4000);  // every 4s
+  } else {
+    alert("That’s not quite it… try again, love 💌");
+  }
+}
+
+function revealLetter() {
+  letterOverlay.style.display = "flex";
+  typeWriter(loveLetter, 0);
+}
+
+
 const loveLetter = `
 I don’t really know where to begin, because no words could ever match how I feel about you… but I’ll try anyway.
 
@@ -29,25 +49,6 @@ You’ll never be alone, baby. I’m yours completely. Always.
 
 I love you endlessly. 🫶🌙
 `;
-
-function unlockHeart() {
-  const input = document.getElementById("passwordInput").value.trim();
-  if (input === correctPassword) {
-    heart.classList.add("unlocked");
-    music.play();
-    revealLetter();
-     // 🌸 Start flower petals & 🦋 butterflies
-    setInterval(createPetal, 500);       // every 0.5s
-    setInterval(createButterfly, 4000);  // every 4s
-  } else {
-    alert("That’s not quite it… try again, love 💌");
-  }
-}
-
-function revealLetter() {
-  letterOverlay.style.display = "flex";
-  typeWriter(loveLetter, 0);
-}
 
 function typeWriter(text, i) {
   const loveLetterElement = document.getElementById("loveLetter");
