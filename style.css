@@ -153,10 +153,21 @@ button:hover {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-image: url('https://pngimg.com/uploads/petals/petals_PNG33.png'); /* You can change the image! */
+  background-image: url('https://i.ibb.co/z4C5Wmf/butterfly.png');
   background-size: cover;
   animation: fall linear forwards;
   opacity: 0.8;
+}
+
+.butterfly {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('https://i.ibb.co/z4C5Wmf/butterfly.png');
+  background-size: contain;
+  animation: float 10s linear infinite;
+  pointer-events: none;
+  opacity: 0.9;
 }
 
 @keyframes fall {
@@ -168,19 +179,6 @@ button:hover {
     transform: translateY(110vh) rotate(360deg);
     opacity: 0;
   }
-}
-
-.butterfly {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-image: url('https://i.ibb.co/z4C5Wmf/butterfly.png'); /* changeable! */
-  background-size: contain;
-  background-repeat: no-repeat;
-  animation: float 10s linear infinite;
-  pointer-events: none;
-  opacity: 0.9;
-  z-index: 999;
 }
 
 @keyframes float {
