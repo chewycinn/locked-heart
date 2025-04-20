@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unlock My Heart</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.pinimg.com/originals/40/2b/f5/402bf5ee292c4de45755be158115f743.gif" alt="Heart" class="heart" id="heart"/>
+    <input type="password" placeholder="password" id="passwordInput"/>
+    <button onclick="unlockHeart()">Unlock</button>
+  </div>
+
+  <div class="letter-overlay" id="letterOverlay">
+    <div class="letter">
+      <p id="typedText"></p>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="assets/my-girl.mp3" loop></audio>
+  <script src="script.js"></script>
+</body>
+</html>
