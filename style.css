@@ -185,3 +185,23 @@ button:hover {
     opacity: 0;
   }
 }
+
+@media (max-width: 600px) {
+  .letter {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .photo-gallery {
+    gap: 10px;
+  }
+
+  .photo-gallery img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .heart {
+    width: 130px;
+  }
+}
